@@ -6,6 +6,7 @@ local Player = game.Players.LocalPlayer
 local charPos = Player.Character.HumanoidRootPart
 
 platform.Size = Vector3.new(5,0.2,5)
+platform.Name = "gamestring"
 platform.Anchored = true
 platform.CFrame = charPos.CFrame * CFrame.new(0, -70, 0)
 platform.Parent = workspace
