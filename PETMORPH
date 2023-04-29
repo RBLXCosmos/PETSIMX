@@ -13,7 +13,7 @@ key.InputBegan:Connect(function(input)
 platform.Name = "gamestring"
 platform.Anchored = true
 platform.CFrame = charPos.CFrame * CFrame.new(0, -70, 0)
-platform.Parent = workspace
+platform.Parent = game.Workspace
 
 charPos.CFrame = charPos.CFrame * CFrame.new(0, -65, 0)
 for i, v in pairs(game:GetService("Workspace").__THINGS.Pets:GetDescendants()) do
