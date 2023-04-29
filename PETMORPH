@@ -5,7 +5,11 @@ local platform = Instance.new("Part")
 local Player = game.Players.LocalPlayer
 local charPos = Player.Character.HumanoidRootPart
 
-platform.Size = Vector3.new(5,0.2,5)
+local key = game:GetService("UserInputService")
+
+key.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.R then
+		platform.Size = Vector3.new(5,0.2,5)
 platform.Name = "gamestring"
 platform.Anchored = true
 platform.CFrame = charPos.CFrame * CFrame.new(0, -70, 0)
@@ -24,3 +28,25 @@ while true do
 platform.CFrame = CFrame.new(charPos.CFrame.X, platform.CFrame.Y, charPos.CFrame.Z)
 task.wait()
 end
+	end
+end)
+
+local key = game:GetService("UserInputService")
+
+key.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.E then
+
+for i, v in pairs(game:GetService("Workspace").__THINGS.Pets:GetDescendants()) do
+  if v.ClassName == "BillboardGui" and v.Nickname.Text ==  Player.Name then
+print(v.Parent)
+Player.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+end
+
+end
+task.wait(0.01)
+
+game.Workspace.gamestring:Destroy()
+
+game.Workspace.Camera.CameraSubject = Player.Character.Humanoid
+	end
+end)
