@@ -45,7 +45,7 @@ end
 end
 task.wait(0.01)
 
-game.Workspace.gamestring:Destroy()
+game.Workspace.gamestring:Remove()
 
 game.Workspace.Camera.CameraSubject = Player.Character.Humanoid
 	end
